@@ -1,10 +1,16 @@
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class MainFrame {
 
@@ -15,7 +21,15 @@ public class MainFrame {
     private Label lex_lbl;
 
     @FXML
-    private TableView<?> lex_tree;
+    private TableView<structure> lex_tree;
+
+    @FXML
+    private TableColumn<structure, String> name_col; 
+    
+    @FXML
+    private TableColumn<structure, String> val_col;
+
+    ObservableList<structure> lex_list = FXCollections.observableArrayList();
 
     @FXML
     private Button rst_btn;
@@ -47,6 +61,7 @@ public class MainFrame {
         input_txt.setText("");
         lex_tree.getItems().clear();
         syn_tree.getGraphicsContext2D().clearRect(0, 0, syn_tree.getWidth(), syn_tree.getHeight());
+        rsu_btn.setText("");
     }
 
     @FXML
@@ -62,6 +77,18 @@ public class MainFrame {
     @FXML
     void submitCode(ActionEvent event) {
         rsu_btn.setText(input_txt.getText());
+        // get text from input text field
+        String input = input_txt.getText();
+        String[] tokens = lexical_analyzer.lex_analyze(input);
+        // display lexemes in table
+        for (int i = 0; i < tokens.length; i++) {
+            lex_list.add(new structure(tokens[i], "h"));
+            System.out.println(tokens[i]);
+        }
     }
+
+    
+    
+    
 
 }
