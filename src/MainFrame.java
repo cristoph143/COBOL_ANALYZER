@@ -43,7 +43,10 @@ public class MainFrame {
 
     @FXML
     void resetCode(ActionEvent event) {
-
+        // clear input text field, table, and canvas
+        input_txt.setText("");
+        lex_tree.getItems().clear();
+        syn_tree.getGraphicsContext2D().clearRect(0, 0, syn_tree.getWidth(), syn_tree.getHeight());
     }
 
     @FXML
