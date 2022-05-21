@@ -90,32 +90,27 @@
     </MenuBar>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="409.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
       <children>
-        <Label alignment="CENTER" layoutX="155.0" layoutY="177.0" style="&#10;" text="Drag components from Library here…" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
-          <font>
-            <Font size="18.0" />
-          </font>
-        </Label>
-            <Button fx:id="submit_btn" layoutX="364.0" layoutY="9.0" mnemonicParsing="false" onAction="#submitCode" text="Submit" />
-            <TableView fx:id="lex_tree" layoutX="19.0" layoutY="95.0" prefHeight="272.0" prefWidth="273.0">
-              <columns>
-                <TableColumn prefWidth="75.0" text="Name" />
-                <TableColumn prefWidth="75.0" text="Value" />
-              </columns>
-               <columnResizePolicy>
-                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-               </columnResizePolicy>
-            </TableView>
-            <TextField fx:id="input_txt" layoutX="145.0" layoutY="9.0" prefHeight="25.0" prefWidth="206.0" />
-            <Label fx:id="source_code_lbl" layoutX="21.0" layoutY="13.0" text="Enter Source Code:" />
-            <Button fx:id="save_tree_btn" layoutX="553.0" layoutY="55.0" mnemonicParsing="false" onAction="#saveTreebtn" text="Save Tree" />
-            <Separator layoutX="304.0" layoutY="45.0" orientation="VERTICAL" prefHeight="330.0" prefWidth="6.0" />
-            <Separator layoutX="4.0" layoutY="45.0" prefHeight="0.0" prefWidth="633.0" />
-            <Label fx:id="lex_lbl" layoutX="21.0" layoutY="59.0" text="Lexical Analyzer: Table View" />
-            <Label fx:id="syn_labl" layoutX="339.0" layoutY="59.0" text="Syntax Analyzer: Parse Tree View" />
-            <Button fx:id="save_tbl_btn" layoutX="209.0" layoutY="53.0" mnemonicParsing="false" onAction="#saveTableBtn" prefWidth="79.0" text="Save Table" />
-            <Button fx:id="rst_btn" layoutX="438.0" layoutY="9.0" mnemonicParsing="false" onAction="#resetCode" text="Reset" />
-            <Label fx:id="rsu_btn" layoutX="500.0" layoutY="13.0" text="Total Tokens are: " />
-            <Canvas fx:id="syn_tree" height="272.0" layoutX="320.0" layoutY="95.0" width="306.0" />
+        <Button fx:id="submit_btn" layoutX="364.0" layoutY="9.0" mnemonicParsing="false" onAction="#submitCode" text="Submit" />
+        <TableView fx:id="lex_tree" layoutX="19.0" layoutY="95.0" prefHeight="272.0" prefWidth="273.0">
+          <columns>
+            <TableColumn prefWidth="75.0" text="Name" />
+            <TableColumn prefWidth="75.0" text="Value" />
+          </columns>
+          <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+          </columnResizePolicy>
+        </TableView>
+        <TextField fx:id="input_txt" layoutX="145.0" layoutY="9.0" prefHeight="25.0" prefWidth="206.0" />
+        <Label fx:id="source_code_lbl" layoutX="21.0" layoutY="13.0" text="Enter Source Code:" />
+        <Button fx:id="save_tree_btn" layoutX="553.0" layoutY="55.0" mnemonicParsing="false" onAction="#saveTreebtn" text="Save Tree" />
+        <Separator layoutX="304.0" layoutY="45.0" orientation="VERTICAL" prefHeight="330.0" prefWidth="6.0" />
+        <Separator layoutX="4.0" layoutY="45.0" prefHeight="0.0" prefWidth="633.0" />
+        <Label fx:id="lex_lbl" layoutX="21.0" layoutY="59.0" text="Lexical Analyzer: Table View" />
+        <Label fx:id="syn_labl" layoutX="339.0" layoutY="59.0" text="Syntax Analyzer: Parse Tree View" />
+        <Button fx:id="save_tbl_btn" layoutX="209.0" layoutY="53.0" mnemonicParsing="false" onAction="#saveTableBtn" prefWidth="79.0" text="Save Table" />
+        <Button fx:id="rst_btn" layoutX="438.0" layoutY="9.0" mnemonicParsing="false" onAction="#resetCode" text="Reset" />
+        <Label fx:id="rsu_btn" layoutX="500.0" layoutY="13.0" text="Total Tokens are: " />
+        <Canvas fx:id="syn_tree" height="272.0" layoutX="320.0" layoutY="95.0" width="306.0" />
       </children>
     </AnchorPane>
   </children>
