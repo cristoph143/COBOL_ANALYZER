@@ -1,10 +1,11 @@
 public class structure {
+    
+    private String name;
+    private String value;
     public structure(String name, String value) {
         this.name = name;
         this.value = value;
     }
-    public String name;
-    public String value;
 
     public String getName() {
         return name;

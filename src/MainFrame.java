@@ -2,17 +2,19 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MainFrame {
+public class MainFrame implements Initializable{
 
     @FXML
     private TextField input_txt;
@@ -78,17 +80,23 @@ public class MainFrame {
     void submitCode(ActionEvent event) {
         rsu_btn.setText(input_txt.getText());
         // get text from input text field
-        String input = input_txt.getText();
-        String[] tokens = lexical_analyzer.lex_analyze(input);
-        // display lexemes in table
+        String inputs = input_txt.getText();
+        String[] tokens = lexical_analyzer.lex_analyze(inputs);
+        // ObservableList<structure> lex_list = FXCollections.observableArrayList();
+        // lex_list.add(struct);
         for (int i = 0; i < tokens.length; i++) {
-            lex_list.add(new structure(tokens[i], "h"));
-            System.out.println(tokens[i]);
+            this.lex_list.add(new structure(
+                tokens[i],
+                tokens[i]
+            ));
         }
+        lex_tree.setItems(lex_list);
     }
 
-    
-    
-    
-
+    @Override
+    public void initialize(URL arg0, ResourceBundle arg1) {
+        // initialize table
+        name_col.setCellValueFactory(new PropertyValueFactory<structure, String>("name"));
+        val_col.setCellValueFactory(new PropertyValueFactory<structure, String>("value"));
+    }
 }
