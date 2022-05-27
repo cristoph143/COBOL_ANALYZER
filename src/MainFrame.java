@@ -91,6 +91,22 @@ public class MainFrame implements Initializable{
             ));
         }
         lex_tree.setItems(lex_list);
+        // draw the syntax tree in the canvas
+        syn_tree.getGraphicsContext2D().clearRect(0, 0, syn_tree.getWidth(), syn_tree.getHeight());
+        // draw the syntax tree
+        draw_tree(syn_tree, tokens);
+    }
+
+    private void draw_tree(Canvas syn_tree2, String[] tokens) {
+        // draw the syntax tree
+        int x = 0;
+        int y = 0;
+        // draw the root
+        syn_tree2.getGraphicsContext2D().fillText(tokens[0], x, y);
+        // draw the left child
+        syn_tree2.getGraphicsContext2D().fillText(tokens[1], x, y + 20);
+        // draw the right child
+        syn_tree2.getGraphicsContext2D().fillText(tokens[2], x, y + 40);
     }
 
     @Override

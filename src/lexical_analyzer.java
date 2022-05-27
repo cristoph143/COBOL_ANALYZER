@@ -8,4 +8,12 @@ public class lexical_analyzer {
         }
         return lexemes_array;
     }
+
+    public static String getTokenofCobol(String str) {
+        // try to match the string with the cobol keywords in declaring variables
+        
+
+
+        return str;
+    }
 }
